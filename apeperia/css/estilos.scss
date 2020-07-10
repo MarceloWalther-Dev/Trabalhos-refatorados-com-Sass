@@ -1,0 +1,37 @@
+// Só compilar uma vez  = sass estilos.scss:estilos.css
+// Ficar atualizando sem precisar ficar compilando = sass --watch estilos.scss:estilos.css
+@import './helpers/variaveis.scss';
+@import './helpers/mixins';
+
+@import'./base/normalize';
+@import './layout/geral.scss';
+@import './layout/header';
+@import './layout/destaque';
+@import './layout/sobre';
+@import './layout/planos';
+@import './layout/blog';
+@import './layout/contato';
+@import './layout/footer';
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
