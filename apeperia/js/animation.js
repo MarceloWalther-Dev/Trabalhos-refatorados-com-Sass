@@ -1,3 +1,18 @@
+const debounce = function(func,wait, immediate){
+    let timeout;
+    return function(...args){
+        const context = this;
+        const later = function(){
+            timeout = null;
+            if(!immediate) func.apply(context, args);
+        };
+        const callNow = immediate && !timeout;
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+        if (callNow) func.apply(context, args);
+    };
+};
+
 const tituloPlano = document.querySelector("[data-tituloPlanos]");
 const plano = document.querySelectorAll(".plano");
 
@@ -12,13 +27,12 @@ function anime(){
         })
     }else{
         gsap.to(tituloPlano, 1, {            
-            scale:1.0,            
+            scale:1.0            
         })
         gsap.to(plano,1,{
-            scale: 1.0,            
+            scale: 1.0            
         })
-    }
-    console.log(windowTop)
+    }    
 }
 anime()
 
